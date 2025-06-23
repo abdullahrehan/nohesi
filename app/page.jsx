@@ -237,21 +237,18 @@ export default function Component() {
             </header>
 
             {/* Hero Section */}
-            <section className="text-center relative py-8 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-6">
+            <section className="text-center relative pt-8 px-4 ">
                 {/* Gradient */}
-                <div className="w-full h-full absolute top-0 h-[100vh] flex justify-center items-center left-0">
+                <div className="w-full absolute top-0 h-[100vh] flex justify-center items-center left-0">
                     <section className="flex relative justify-center items-center h-full w-full max-w-lg overflow-visible">
-                        <div className="absolute  w-[500px] h-[500px] rounded-full  rounded-[500px] bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] blur-2xl opacity-30" style={{transform:"translate(120px,50px)"}}></div>
-                        <div className="absolute translate-8 top[130px] left[230px] w-[500px] h-[500px] bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{transform: "translate(-120px,50px)" }}></div>
-                        <div className="absolute top[180px] right[180px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{transform: "translate(0px,-70px)" }}></div>
-                        {/* <div className="absolute left-100 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] opacity-30 rounded-[500px]"></div>
-                        <div className="absolute top-[130px] left-[230px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] opacity-20 rounded-[500px]"></div>
-                        <div className="absolute top-[180px] right-[180px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] opacity-10 rounded-[500px]"></div> */}
+                        <div className="absolute  w-[500px] h-[500px] rounded-[500px] bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] blur-2xl opacity-30" style={{ transform: "translate(120px,50px)" }}></div>
+                        <div className="absolute translate-8 top[130px] left[230px] w-[500px] h-[500px] bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{ transform: "translate(-120px,50px)" }}></div>
+                        <div className="absolute top[180px] right[180px] w-[500px] h-[500px] bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{ transform: "translate(0px,-70px)" }}></div>
                     </section>
                 </div>
 
                 <div className="max-w-[1920px] mx-auto">
-                    <h1 className="text-3xl mt-6 font-roboto font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 lg:mb-6 leading-tight">
+                    <h1 className="text-3xl mt-6 font-roboto sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 lg:mb-6 leading-tight">
                         JOIN <span className="text-[#dd0355]">00,000</span> OTHERS
                         <br />
                         <span className="pt-4">ON NO HESI VIP</span>
@@ -285,15 +282,22 @@ export default function Component() {
                             <div className="px-4 h-[30px] flex items-center text-sm font-bold p-2">
                                 {data.isPopular && "MOST POPULAR"}
                             </div>
-                            <div className={`border-brand-border_color relative flex-1 ${index == 1 ? "bg-[#100e12]" : "bg-brand-black"} rounded-2xl border flex flex-col flex-1 p-4 gap-4`}>
+                            <div className={`border-brand-border_color relative flex-1 ${index == 1 || index==2 ? "bg-[#0005]" : "bg-brand-black"} rounded-2xl border flex flex-col flex-1 p-4 gap-4`}>
+
+                                {index == 1 && <div className="absolute w-full z-10 h-full top-0 left-0 rounded-2xl" style={{
+                                    background: `
+      linear-gradient(0deg, rgba(8, 6, 10, 0.44), rgba(8, 6, 10, 0.44)),
+      radial-gradient(160.5% 100% at 50% 0%, rgba(8, 6, 10, 0.05) 25.18%, rgba(231, 223, 216, 0.05) 100%)
+    `
+                                }}></div>}
                                 {index == 2 && <div className="absolute w-full z-10 h-full top-0 left-0 rounded-2xl bg-[radial-gradient(160.5%_100%_at_50%_0%,rgba(8,6,10,0.05)_25.18%,rgba(255,129,38,0.05)_100%)]"></div>}
                                 {index == 3 && <div className="absolute w-full z-10 h-full top-0 left-0 rounded-2xl bg-[radial-gradient(160.5%_100%_at_50%_0%,rgba(8,6,10,0.22)_25.18%,rgba(254,44,85,0.22)_100%)]"></div>}
 
-                                <div className="text-xs sm:text-sm mb-2 flex gap-1 italic items-center">
+                                <div className="text-xs z-20 sm:text-sm mb-2 flex gap-1 italic items-center">
                                     <IoCube color={data.color} style={{ filter: data.name !== "Free" && `drop-shadow(0 0 6px ${data.color})` }} /> TIER {index + 1}
                                 </div>
 
-                                <div className="flex flex-col gap-2">
+                                <div className="flex z-20 flex-col gap-2">
                                     <h3 className="text-lg lg:text-xl font-semibold mb-2">{data.type}</h3>
                                     {data.price === "Free" ? (
                                         <div className="text-2xl lg:text-3xl font-bold">Free</div>
@@ -304,7 +308,7 @@ export default function Component() {
                                     )}
                                 </div>
 
-                                <div className="flex flex-col gap-2">
+                                <div className="flex z-20 flex-col gap-2">
                                     <button
                                         className={`w-full ${data.buttonName === "CURRENT PLAN"
                                             ? "bg-brand-selected_card text-brand-selected_card_text"
@@ -321,7 +325,7 @@ export default function Component() {
                                     </button>
                                 </div>
 
-                                <div className="flex flex-col gap-5 flex-1">
+                                <div className="flex z-20 flex-col gap-5 flex-1">
                                     {data.features.map((feature, i) => (
                                         <div key={i} className="flex items-center space-x-2 text-sm">
                                             <FaCircleCheck className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" />

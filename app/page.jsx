@@ -239,11 +239,14 @@ export default function Component() {
             {/* Hero Section */}
             <section className="text-center relative py-8 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-6">
                 {/* Gradient */}
-                <div className="w-full h-full absolute top-0 left-0">
-                    <section className="relative overflow-hidden h-[100vh] py-20">
-                        <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] opacity-40"></div>
-                        <div className="absolute top-[200px] right-[-150px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] opacity-30"></div>
-                        <div className="absolute bottom-[-150px] left-[30%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] opacity-20"></div>
+                <div className="w-full h-full absolute top-0 h-[100vh] flex justify-center items-center left-0">
+                    <section className="flex relative justify-center items-center h-full w-full max-w-lg overflow-visible">
+                        <div className="absolute  w-[500px] h-[500px] rounded-full  rounded-[500px] bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] blur-2xl opacity-30" style={{transform:"translate(120px,50px)"}}></div>
+                        <div className="absolute translate-8 top[130px] left[230px] w-[500px] h-[500px] bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{transform: "translate(-120px,50px)" }}></div>
+                        <div className="absolute top[180px] right[180px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] blur-2xl opacity-20 rounded-[500px]" style={{transform: "translate(0px,-70px)" }}></div>
+                        {/* <div className="absolute left-100 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,_#7B61FF_0%,_transparent_70%)] opacity-30 rounded-[500px]"></div>
+                        <div className="absolute top-[130px] left-[230px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,_#DD0355_0%,_transparent_70%)] opacity-20 rounded-[500px]"></div>
+                        <div className="absolute top-[180px] right-[180px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_#FF8126_0%,_transparent_70%)] opacity-10 rounded-[500px]"></div> */}
                     </section>
                 </div>
 
